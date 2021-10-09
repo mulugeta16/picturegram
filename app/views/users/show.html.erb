@@ -1,0 +1,24 @@
+<div class="users_h1_box"><h1><%= @user.name %>'s page</h1></div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Profile Picture:</strong>
+  <%= image_tag @user.image.url %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<% if logged_in? %>
+<%= link_to 'Favorites List',favorites_path, class:'btn btn-primary' %> |
+<%= link_to "Edit", edit_user_path(current_user.id)%> |
+<%= link_to 'Back', users_path %> |
+<%= link_to 'New Picture', new_picture_path %>
+<% end %>
