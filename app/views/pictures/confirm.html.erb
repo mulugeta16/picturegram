@@ -1,0 +1,14 @@
+<h1>Do you want to post this ?</h1>
+
+<%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
+  <!-- Description for displaying the uploaded image on the confirmation screen -->
+  <%= form.hidden_field :content %>
+  <p>Content: <%= @picture.content %></p>
+  <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit "Yes" %>
+  <% end %>
+  <%= form_with(model:@picture, url:new_picture_path, local:true, method:"get") do |form| %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit "No", name: 'Back' %>
+<% end %>
