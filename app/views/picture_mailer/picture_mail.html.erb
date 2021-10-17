@@ -1,0 +1,5 @@
+<h1>Your inquiry is complete！</h1>
+<h4>name: <%= @picture.user.name %></h4>
+<h4>Confirmation contents of inquiry</h4>
+<p>content: <%= @picture.content %></p>
+<%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>

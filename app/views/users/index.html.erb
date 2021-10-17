@@ -15,7 +15,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr class="row">
-        <td class="col-md-4"><%= image_tag user.image.url, style:'width:300px;height:200px %></td>
+        <td class="col-md-4"><%= image_tag user.image.url %></td>
         <td class="col-md-4"><%= user.name %></td>
         <td class="col-md-4"><%= user.email %></td>
         <td><button type="button" class="btn btn-info btn-sm"><%= link_to 'See', user %></button></td>

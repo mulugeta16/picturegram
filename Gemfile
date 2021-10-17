@@ -3,9 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 gem 'bcrypt'
 gem 'carrierwave', '~> 2.0'
+gem 'mimemagic', '0.3.9'
 group :development, :test do
   gem'dotenv-rails'
   end
+  gem 'rexml'
+  group :development do
+  gem 'letter_opener_web'
+end
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
